@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theme Toggler</title>
+    <style>
+        
+        body {
+        background-color: #ffffff;
+        color: #000000;
+        transition: background-color 0.3s, color 0.3s;
+        }
+
+        .theme-container {
+        text-align: center;
+        padding: 20px;
+        }
+
+        button {
+        padding: 10px 20px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        margin-bottom: 20px;
+        }
+
+        body.dark-mode {
+        background-color: #121212;
+        color: #f0f0f0;
+        }
+
+    </style>
+</head>
+<body>
+  <div class="theme-container">
+    <button id="theme-toggler">Toggle Theme</button>
+    <h1>Theme Toggler Example</h1>
+    <p>This is a simple theme toggler using JavaScript!</p>
+  </div>
+  
+  <script>
+    const themeToggler = document.getElementById('theme-toggler')
+    const body = document.body
+    const currentTheme = localStorage.getItem('theme')
+
+    if(currentTheme === 'dark') {
+        body.classList.add('dark-mode')
+    }
+    themeToggler.addEventListener('click', () => {
+        body.classList.toggle('dark-mode')
+    })
+
+    if(body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark')
+    }
+    else {
+        localStorage.setItem('theme', 'light')
+    }
+  </script>
+</body>
+</html>

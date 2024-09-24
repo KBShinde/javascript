@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0 20px; /* Added padding for better mobile view */
+}
+
+.todo-container {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+    position: relative; /* Added for better shadow effect */
+}
+
+.todo-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 28px; /* Increased font size for the title */
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#todo-input {
+    width: 90%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#todo-input:focus {
+    border-color: #6e8efb;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#add-btn {
+    width: 80%;
+    padding: 12px;
+    background-color: #6e8efb;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(110, 142, 251, 0.4);
+}
+
+#add-btn:hover {
+    background-color: #5a75e6;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(110, 142, 251, 0.6);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding: 12px;
+    background-color: #f5f5f5;
+    border: 2px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+li:hover {
+    background-color: #e9e9e9;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+li button {
+    background-color: transparent;
+    color: #6e8efb;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+    padding: 6px;
+}
+
+li button:hover {
+    color: #5a75e6;
+}
+
+li button i {
+    pointer-events: none; /* Prevent click on the icon itself */
+}
+
+/* Icons inside buttons */
+li button .fa-trash {
+    color: #dc3545;
+}
+
+li button:hover .fa-trash {
+    color: #c82333;
+}
+
+li button .fa-edit {
+    color: #ffc107;
+    margin-left: 230px;
+}
+
+li button:hover .fa-edit {
+    color: #e0a800;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="todo-container">
+        <h1>My Todo List</h1>
+        <input type="text" id="todo-input" placeholder="Add a new task" />
+        <button id="todo-btn">Add task</button>
+        <ul id="todo-list"></ul>
+    </div>
+    <script src="todoList.js"></script>
+</body>
+</html>

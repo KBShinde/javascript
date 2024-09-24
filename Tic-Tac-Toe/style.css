@@ -1,0 +1,91 @@
+body {
+    background-color: #333;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.title {
+    font-size: 48px;
+    color: #bcbcbc;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.upper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+.contain {
+    width: 460px;
+    height: 460px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.row {
+    border: 2px solid #333;
+    width: 140px;
+    height: 140px;
+    background-color: #4de4f1;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    font-size: 72px;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.row:hover {
+    background-color: #40ced8;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.row.winner {
+    background-color: #ffca28;
+    color: #333;
+    font-weight: bold;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+@media (max-width: 500px) {
+    .contain {
+        width: 320px;
+        height: 320px;
+    }
+    .row {
+        width: 100px;
+        height: 100px;
+        font-size: 48px;
+    }
+}
