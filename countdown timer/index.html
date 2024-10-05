@@ -45,34 +45,25 @@
     </style>
 </head>
 <body>
-
-    <h1 class="timer" id="countdown">00:00</h1>
+    <h1 class="timer" id="countdown">00:00</h1>   
 
     <script>
-
         let timeLeft = 1*5
 
-        function formatTime (time) {
+        function formatTime(time) {
             const minutes = Math.floor(time / 60)
             const seconds = time % 60
-            return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`
+            return `${minutes}:${seconds < 10 ? '0':''}${seconds}`
         }
-
         const countdownElement = document.getElementById('countdown')
-
         const countdownInterval = setInterval(() => {
-            
             timeLeft--
             countdownElement.textContent = formatTime(timeLeft)
-
-            if(timeLeft <= 0){
+            if(timeLeft <= 0) {
                 clearInterval(countdownInterval)
-                countdownElement.textContent =  "Time's up"
+                countdownElement.textContent = "Times'Up"
             }
-
         }, 1000)
-
     </script>
-    
 </body>
 </html>

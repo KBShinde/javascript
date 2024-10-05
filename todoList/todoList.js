@@ -3,7 +3,7 @@ const todoBtn = document.getElementById('todo-btn')
 const todoList = document.getElementById('todo-list')
 
 function addTodo() {
-    if(todoInput.value === '') {
+    if(todoInput.value === '')  {
         alert('Please enter a task')
         return
     }
@@ -16,7 +16,7 @@ function addTodo() {
     li.textContent = todoInput.value
     div.appendChild(li)
 
-    todoInput.value = '';
+    todoInput.value = ''
 
     const deleteBtn = document.createElement('button')
     deleteBtn.classList.add('delete-btn')
@@ -37,13 +37,13 @@ function handleTodo(e) {
         const todo = item.parentElement
         todo.remove()
     }
-    if(item.classList.contains('complete-btn')){
+    if(item.classList.contains('complete-btn')) {
         const todo = item.parentElement
-        const todoItem = todo.querySelector('.todo-item')
-        todoItem.style.textDecoration =
+        const todoItem = document.querySelector('.todo-item')
+        todoItem.style.textDecoration = 
         todoItem.style.textDecoration === 'line-through' ? 'none' : 'line-through'
     }
 }
 
-todoBtn.addEventListener('click', addTodo);
-todoList.addEventListener('click', handleTodo);
+todoBtn.addEventListener('click', addTodo)
+todoList.addEventListener('click', handleTodo)

@@ -1,42 +1,39 @@
-let timer;
-let isRunning = false;
-let minutes = 0; seconds = 0; miliSeconds = 0;
+let timer ;
+let isRunning = false
+let minutes = 0; seconds = 0; miliseconds = 0;
 
-function updateDisplay () {
+function updateDisplay() {
     const display = document.getElementById('display')
-    display.textContent = `${String(minutes).padStart(2, '0')} : ${String(seconds).padStart(2, '0')} : ${String(miliSeconds).padStart(2, '0')}`
+    display.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}:${String(miliseconds).padStart(2, '0')}`
 }
 
 function start() {
     if(!isRunning) {
-        isRunning = true 
+        isRunning = true
         timer = setInterval(() => {
-            miliSeconds++;
-            if(miliSeconds === 60) {
-                seconds++;
-                miliSeconds = 0;
-                if(seconds === 60) {
-                    minutes++;
+            miliseconds++
+            if(miliseconds === 60) {
+                seconds++
+                miliseconds = 0;
+                if (seconds === 0) {
+                    minutes++
                     seconds = 0;
                 }
             }
             updateDisplay()
-        }, 10)
+        },20)
     }
-};
-
+}
 function stop() {
-    if(isRunning) {
-        isRunning = false
-        clearInterval(timer)
-    }
-};
+    clearInterval(timer)
+    isRunning = false
+}
 
 function reset() {
     stop()
-    minutes = 0 
-    seconds = 0
-    miliSeconds = 0
+    minutes = 0
+    seconds = 0;
+    miliseconds = 0
     updateDisplay()
 }
 
